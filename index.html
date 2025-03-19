@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Collective ($SEE)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Shadow Collective</h1>
+                <p class="tagline">We are The Unseen.</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="#why-join">Why join us</a></li>
+                    <li><a href="#tokenomics">Tokenomics</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <section id="home" class="page active">
+                <div class="hero-effect"></div>
+                <div class="shadow-effect"></div>
+                <div class="page-content">
+                    <h2>Welcome to Shadow Collective</h2>
+                    <p class="tagline-full">No whales. No masters. Join us and $SEE with us.</p>
+                    <p>The Unseen is rising. We are a collective, a movement of retail investors united by a shared vision. We believe in the power of ideas and the strength of community.</p>
+                    <div class="image-placeholder">
+                        <span>Image Placeholder: A shadowy figure or a group silhouette</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mission" class="page">
+                <div class="shadow-effect"></div>
+                <div class="page-content">
+                    <h2>Our Mission</h2>
+                    <p>The first Ideacoin uniting retail investors against institutional capture. We’re not a meme - we’re a movement.</p>
+                    <p>We aim to empower the everyday investor, providing a platform to support and grow ideas that matter, free from the influence of large financial institutions.</p>
+                    <div class="image-placeholder">
+                        <span>Image Placeholder: A visual representation of unity or breaking barriers</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="why-join" class="page">
+                <div class="shadow-effect"></div>
+                <div class="page-content">
+                    <h2>Why Join The Unseen?</h2>
+                    <p>Become part of a movement that values your voice and your investment. We are building a community where every member has a stake in our collective success.</p>
+                    <ul>
+                        <li>Be part of the first Ideacoin.</li>
+                        <li>Join a community of like-minded individuals.</li>
+                        <li>Support a movement against institutional capture.</li>
+                        <li>$SEE the future with us.</li>
+                    </ul>
+                    <div class="image-placeholder">
+                        <span>Image Placeholder: People joining together or a symbol of community</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tokenomics" class="page">
+                <div class="shadow-effect"></div>
+                <div class="page-content">
+                    <h2>$SEE Tokenomics</h2>
+                    <p>Details about the $SEE token distribution, supply, and utility will be available soon. Stay tuned for updates!</p>
+                    <p>We are committed to transparency and fairness in our tokenomics to ensure a healthy and sustainable ecosystem for the Shadow Collective.</p>
+                    <div class="image-placeholder">
+                        <span>Image Placeholder: A graphic representing token distribution or growth</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="cursor-effect"></div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar nav ul li a');
+            const pages = document.querySelectorAll('.page');
+
+            function showPage(id) {
+                pages.forEach(page => page.classList.remove('active'));
+                document.getElementById(id).classList.add('active');
+            }
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    showPage(targetId);
+                });
+            });
+
+            // Show the home page initially
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
