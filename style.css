@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #ddd;
+    background-color: #111;
+    overflow: hidden; /* Prevent scrollbars when using cursor effect */
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #222;
+    color: #eee;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo h1 {
+    margin-bottom: 5px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.logo .tagline {
+    font-size: 0.8em;
+    color: #aaa;
+    text-align: center;
+}
+
+.sidebar nav {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #333;
+}
+
+/* Main Content Styles */
+.content {
+    flex-grow: 1;
+    padding: 30px;
+    position: relative; /* For shadow effect positioning */
+    overflow-y: auto; /* Allow scrolling for content */
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page h2 {
+    color: #eee;
+    margin-bottom: 20px;
+}
+
+.page p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.page ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.image-placeholder {
+    background-color: #333;
+    color: #777;
+    padding: 50px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+/* Shadow Effect */
+.shadow-effect {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #111;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: -1; /* Place behind the content */
+    opacity: 0.8;
+    transition: transform 0.3s ease-in-out;
+}
+
+.content:hover .shadow-effect {
+    transform: translate(5px, 5px); /* Example movement on hover */
+}
+
+/* Hero Effect (for Home page) */
+#home .hero-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #333, #111); /* Example gradient */
+    opacity: 0.7;
+    z-index: -2;
+}
+
+/* Cursor Interaction Effect */
+#cursor-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+        align-items: stretch;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .logo {
+        text-align: left;
+    }
+
+    .sidebar nav {
+        margin-top: 0;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .sidebar nav ul li {
+        margin-bottom: 0;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
